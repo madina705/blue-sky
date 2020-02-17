@@ -1,4 +1,5 @@
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class DailyDataItem(
 
@@ -118,4 +119,4 @@ data class DailyDataItem(
 
     @field:SerializedName("apparentTemperatureMaxTime")
     val apparentTemperatureMaxTime: Int? = null
-)
+) : Serializable

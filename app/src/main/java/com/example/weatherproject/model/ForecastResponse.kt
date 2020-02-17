@@ -1,4 +1,5 @@
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ForecastResponse(
 
@@ -29,4 +30,4 @@ data class ForecastResponse(
     @field:SerializedName("longitude")
     val longitude: Double? = null
 
-)
+) : Serializable

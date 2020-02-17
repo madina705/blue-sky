@@ -1,4 +1,5 @@
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Hourly(
 
@@ -11,4 +12,4 @@ data class Hourly(
     @field:SerializedName("icon")
     val icon: String? = null
 
-)
+) : Serializable

@@ -1,4 +1,4 @@
-package com.example.weatherproject
+package com.example.weatherproject.screens.forecast
 
 
 import DailyDataItem
@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weatherproject.R
+import com.example.weatherproject.utils.CustomFormatter
 import com.example.weatherproject.utils.WeatherIcon
 import kotlinx.android.synthetic.main.list_item_daily.view.*
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.roundToInt
 
 class DailyForecastAdapter : RecyclerView.Adapter<DailyForecastAdapter.DailyViewHolder>() {
 
@@ -43,8 +44,8 @@ class DailyForecastAdapter : RecyclerView.Adapter<DailyForecastAdapter.DailyView
         val dateFormatter = SimpleDateFormat("MMM d", Locale.US)
         holder.dayOfWeek.text = dayFormatter.format(date)
         holder.date.text = dateFormatter.format(date)
-        holder.minTemp.text = item?.temperatureMin?.roundToInt().toString() + "°"
-        holder.maxTemp.text = item?.temperatureMax?.roundToInt().toString() + "°"
+        holder.minTemp.text = CustomFormatter.formatTemp(item?.temperatureMin)
+        holder.maxTemp.text = CustomFormatter.formatTemp(item?.temperatureMax)
         holder.icon.setImageResource(WeatherIcon.get(dailyItems[position]?.icon))
     }
 

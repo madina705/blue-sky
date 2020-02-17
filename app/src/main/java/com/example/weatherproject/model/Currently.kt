@@ -1,5 +1,6 @@
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Currently(
 
@@ -59,4 +60,4 @@ data class Currently(
 
 	@field:SerializedName("uvIndex")
 	val uvIndex: Int? = null
-)
+) : Serializable

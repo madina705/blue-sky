@@ -1,4 +1,5 @@
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class HourlyDataItem(
 
@@ -52,4 +53,4 @@ data class HourlyDataItem(
 
     @field:SerializedName("uvIndex")
     val uvIndex: Int? = null
-)
+) : Serializable

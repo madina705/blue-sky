@@ -1,4 +1,5 @@
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Flags(
 
@@ -13,4 +14,4 @@ data class Flags(
 
     @field:SerializedName("meteoalarm-license")
     val meteoalarmLicense: String? = null
-)
+) : Serializable

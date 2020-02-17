@@ -1,4 +1,5 @@
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Minutely(
 
@@ -10,4 +11,4 @@ data class Minutely(
 
     @field:SerializedName("icon")
     val icon: String? = null
-)
+) : Serializable

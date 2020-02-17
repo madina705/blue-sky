@@ -1,15 +1,16 @@
-package com.example.weatherproject
+package com.example.weatherproject.screens.forecast
 
 import HourlyDataItem
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weatherproject.R
+import com.example.weatherproject.utils.CustomFormatter
 import com.example.weatherproject.utils.WeatherIcon
 import kotlinx.android.synthetic.main.list_item_hourly.view.*
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.roundToInt
 
 
 class HourlyForecastAdapter : RecyclerView.Adapter<HourlyForecastAdapter.HourlyViewHolder>() {
@@ -44,7 +45,7 @@ class HourlyForecastAdapter : RecyclerView.Adapter<HourlyForecastAdapter.HourlyV
             holder.time.text = dateFormatter.format(date).toLowerCase()
         }
         holder.icon.setImageResource(WeatherIcon.get(hourlyItems[position]?.icon))
-        holder.temp.text = item?.temperature?.roundToInt().toString() + "°"
+        holder.temp.text = CustomFormatter.formatTemp(item?.temperature)
     }
 
 }
